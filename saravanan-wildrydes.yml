@@ -424,6 +424,8 @@ Resources:
                 Version: '1'
               InputArtifacts:
                 - Name: SourceOutput
+              OutputArtifacts:
+                - Name: BuildOutput
               Configuration:
                 ProjectName: !Ref SaravananCodeBuildProject
 
@@ -435,6 +437,8 @@ Resources:
                 Owner: AWS
                 Provider: ECS
                 Version: '1'
+              InputArtifacts:
+                - Name: BuildOutput
               Configuration:
                 ClusterName: !Ref SaravananCluster
                 ServiceName: !Ref SaravananService
